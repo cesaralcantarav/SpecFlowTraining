@@ -1,0 +1,1 @@
+﻿checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '19961c85-12c5-46a2-9779-008631aba651', url: 'https://github.com/cesaralcantarav/SpecFlowTraining.git']]])
