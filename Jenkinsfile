@@ -1,4 +1,4 @@
-﻿pipeline {
+pipeline {
 	agent any
 	parameters {
 		string(name: 'SCENARIO_TAG')
