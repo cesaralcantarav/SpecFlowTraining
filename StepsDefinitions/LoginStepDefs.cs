@@ -38,5 +38,13 @@ namespace SpecFlowTraining.StepsDefinitions
 
         }
 
+        [Then(@"se muestra el mensaje de error ""([^""]*)""")]
+        public void ThenSeMuestraElMensajeDeError(string message)
+        {
+            Assert.AreEqual(LoginPage.errorMessage(), message);
+            webDriver.Quit();
+        }
+
+
     }
 }

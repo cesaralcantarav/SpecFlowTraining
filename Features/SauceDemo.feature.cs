@@ -77,12 +77,14 @@ namespace SpecFlowTraining.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Inicio de sesión exitoso")]
+        [NUnit.Framework.CategoryAttribute("LoginSuccess")]
         public void InicioDeSesionExitoso()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "LoginSuccess"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inicio de sesión exitoso", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
+#line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -92,14 +94,47 @@ namespace SpecFlowTraining.Features
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
     testRunner.Given("que el Cliente se encuentra en la página SauceDemo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
     testRunner.When("inicia sesión con las credenciales: standard_user, secret_sauce", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 9
     testRunner.Then("el login es satisfactorio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Inicio de sesión con usuario bloqueado")]
+        [NUnit.Framework.CategoryAttribute("LoginBlocked")]
+        public void InicioDeSesionConUsuarioBloqueado()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "LoginBlocked"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inicio de sesión con usuario bloqueado", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 13
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 15
+    testRunner.Given("que el Cliente se encuentra en la página SauceDemo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 16
+    testRunner.When("inicia sesión con las credenciales: locked_out_user, secret_sauce", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+    testRunner.Then("se muestra el mensaje de error \"Epic sadface: Sorry, this user has been locked ou" +
+                        "t.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
