@@ -26,7 +26,8 @@ pipeline {
 		stage('Execute Tests'){
 			steps{
 				script{
-					bat '"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" bin/Debug/net6.0/SpecFlowTraining.dll --where "@${SCENARIO_TAG}"'
+                    echo "{SCENARIO_TAG}"
+					bat '"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" bin/Debug/net6.0/SpecFlowTraining.dll --where "@$params.SCENARIO_TAG"'
 				}
 			}
 		}
