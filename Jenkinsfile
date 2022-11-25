@@ -4,11 +4,6 @@ pipeline {
 		string(name: 'SCENARIO_TAG', defaultValue: "Login", trim: false, description: "Tag a ejecutar")
 	}
 	stages {
-		stage('Checkout SCM'){
-			steps{
-			git branch: "master", url: 'https://github.com/cesaralcantarav/SpecFlowTraining.git'
-			}
-		}
 		stage('MSBuild Restore'){
 			steps{
 				script{
